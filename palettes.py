@@ -1,4 +1,4 @@
-# 数学讲解视频调色板（三套配色，语义角色保持一致）
+# 数学讲解视频 · 配色方案（语义角色在各套之间保持一致）
 # 用法（mk3b.py 中）：
 #   from palettes import JADE as P
 #   config.background_color = P["BG"]
@@ -48,3 +48,53 @@ JADE_FILL_OPACITY = 0.38
 HL_FILL_OPACITY = {"PAPER": 0.55, "CHALK": 0.80, "JADE": 0.80}
 
 PALETTES = {"paper": PAPER, "chalk": CHALK, "jade": JADE}
+
+# 4. 宣纸朱砂 Xuan & Cinnabar（浅色，水墨+印章）：结论用朱砂印章框，错误用墨灰叉+斜线划掉
+XUAN = {
+    "BG":    "#F3ECDD",  # 背景：暖色宣纸
+    "FG":    "#22201C",  # 主文字：松烟墨
+    "C_A":   "#2D4E87",  # 第一个集合/对象：靛青（描边/文字）
+    "C_A_FILL": "#3B74C4",  # 靛青区域填充用色：原色低透明度在宣纸上发灰，填充改用更亮的蓝
+    "C_B":   "#4A7C59",  # 第二个集合：松青绿
+    "C_C":   "#B07A2A",  # 第三个集合：赭石
+    "C_HL":  "#C8361F",  # 结论/交集：朱砂印泥红（印章底色，文字用 BG 色反白）
+    "C_NO":  "#5A5550",  # 错误/排除：墨灰（因 HL 已是红色，错误不用红，用叉+斜线划掉）
+    "C_DIM": "#A79F92",  # 次要元素/网格/全集框：淡墨灰
+}
+XUAN_FILL_OPACITY = 0.30     # 韦恩图区域填充透明度（淡墨晕染感）
+XUAN_HL_FILL_OPACITY = 0.50  # 交集朱砂填充透明度
+XUAN_STROKE_WIDTH = 5.5      # 圆的描边加粗，像毛笔墨线
+
+# 5. 蓝图 Blueprint（深色）：工程蓝图底 + 细网格 + 虚线辅助线
+BLUEPRINT = {
+    "BG":    "#0F2A4A",  # 背景：蓝图深蓝
+    "FG":    "#EAF2FF",  # 主文字：图纸白
+    "C_A":   "#9FD3FF",  # 第一个集合/对象：浅青白
+    "C_B":   "#7FE0C2",  # 第二个集合：薄荷青
+    "C_C":   "#FFB4A2",  # 第三个集合：浅珊瑚
+    "C_HL":  "#FFE066",  # 结论/交集/强调：标注黄
+    "C_NO":  "#FF6B6B",  # 错误/排除：警示红
+    "C_DIM": "#5B7BA3",  # 次要元素/辅助虚线/全集框：钢蓝灰
+    "C_GRID": "#2B4C75", # 背景网格线（细实线，每 0.5 单位一条，整数线略亮）
+}
+BLUEPRINT_FILL_OPACITY = 0.22     # 区域填充透明度（保持网格隐约可见）
+BLUEPRINT_HL_FILL_OPACITY = 0.72  # 交集填充透明度
+BLUEPRINT_STROKE_WIDTH = 2.5      # 细而精确的线
+
+# 6. 孔版印刷 Risograph（浅色）：荧光粉 + 孔版蓝，重叠处叠印出紫色
+RISO = {
+    "BG":    "#F4F1EA",  # 背景：再生纸米白
+    "FG":    "#1B1B3A",  # 主文字：孔版藏青油墨
+    "C_A":   "#FF48B0",  # 第一个集合/对象：荧光粉（填充约 0.55）
+    "C_B":   "#0078BF",  # 第二个集合：孔版蓝（填充约 0.55）
+    "C_C":   "#FFE800",  # 第三个集合：孔版黄（浅底上看不清，需配 C_C_INK 描边/文字）
+    "C_C_INK": "#B39A00",  # 孔版黄的深色描边/文字版本
+    "C_HL":  "#6C2E8F",  # 结论/交集：粉+蓝叠印紫（交集区域实色填充，标签文字也用它）
+    "C_HL_MARK": "#FFE800",  # 结论公式背后的荧光黄马克笔底色（上面文字用 FG 藏青）
+    "C_NO":  "#E4572E",  # 错误/排除：橙红
+    "C_DIM": "#A7A3B5",  # 次要元素/网格/全集框：灰紫
+}
+RISO_FILL_OPACITY = 0.55     # 粉/蓝区域填充透明度
+RISO_HL_FILL_OPACITY = 1.0   # 交集叠印紫实色
+
+PALETTES.update({"xuan": XUAN, "blueprint": BLUEPRINT, "riso": RISO})
