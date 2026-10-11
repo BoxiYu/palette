@@ -1,0 +1,33 @@
+{
+  "paper": {
+    "BG": "#F7F3EA",
+    "FG": "#1E2430",
+    "C_A": "#2563A8",
+    "C_B": "#2F7D5B",
+    "C_C": "#C2561F",
+    "C_HL": "#FFD84D",
+    "C_HL_INK": "#B7860B",
+    "C_NO": "#C0392B",
+    "C_DIM": "#9AA0A8"
+  },
+  "chalk": {
+    "BG": "#1E2B27",
+    "FG": "#F1EEE4",
+    "C_A": "#F4A6B7",
+    "C_B": "#9AD9C8",
+    "C_C": "#AFC3F2",
+    "C_HL": "#FFE28A",
+    "C_NO": "#FF8C7A",
+    "C_DIM": "#6F7F79"
+  },
+  "jade": {
+    "BG": "#0E1A1C",
+    "FG": "#E7F0EC",
+    "C_A": "#35C3AE",
+    "C_B": "#F2A35E",
+    "C_C": "#9C8CFF",
+    "C_HL": "#F6C945",
+    "C_NO": "#EF5B5B",
+    "C_DIM": "#5E6E6D"
+  }
+}
