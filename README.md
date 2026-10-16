@@ -1,9 +1,10 @@
 # palette
 
-数学讲解视频的六套配色，为 Manim 设计。每套的颜色角色一致（背景、文字、对象 A/B/C、结论、错误、次要），可以直接互换。
+数学讲解视频的七套配色，为 Manim 设计。每套的颜色角色一致（背景、文字、对象 A/B/C、结论、错误、次要），可以直接互换。
 
 ![第 1–3 套](previews/set1.png)
 ![第 4–6 套](previews/set2.png)
+![第 7 套](previews/peiyu.png)
 
 ## 草稿纸 Paper
 
@@ -99,6 +100,27 @@
 | 荧光笔底色 | `C_HL_MARK` | ![](https://placehold.co/14x14/FFE800/FFE800.png) `#FFE800` |
 | 错误 / 排除 | `C_NO` | ![](https://placehold.co/14x14/E4572E/E4572E.png) `#E4572E` |
 | 次要 / 网格 | `C_DIM` | ![](https://placehold.co/14x14/A7A3B5/A7A3B5.png) `#A7A3B5` |
+
+## 培玉 Peiyu
+
+培玉的品牌色卡，浅色。松绿和赤金取自 logo，再配石青、赭石，是青绿山水的一套颜色。logo 原色在米白底上太淡，文字都用压深后的同色相版本。
+
+`C_A` 和 `C_A_2` 是同一色相的两层，适合原数列→一阶差这种逐层推出的关系；两个并列对象用 `C_A` 和 `C_B`。
+
+| 角色 | 变量 | 色值 |
+|---|---|---|
+| 背景 | `BG` | ![](https://placehold.co/14x14/F7F4EE/F7F4EE.png) `#F7F4EE` |
+| 主文字 | `FG` | ![](https://placehold.co/14x14/1A2822/1A2822.png) `#1A2822` |
+| 对象 A | `C_A` | ![](https://placehold.co/14x14/1E4A36/1E4A36.png) `#1E4A36` |
+| 对象 A 下一层 | `C_A_2` | ![](https://placehold.co/14x14/2F7A56/2F7A56.png) `#2F7A56` |
+| 对象 B | `C_B` | ![](https://placehold.co/14x14/2F5D8A/2F5D8A.png) `#2F5D8A` |
+| 对象 C | `C_C` | ![](https://placehold.co/14x14/A35A32/A35A32.png) `#A35A32` |
+| 结论 / 强调 | `C_HL` | ![](https://placehold.co/14x14/B5843A/B5843A.png) `#B5843A` |
+| 强调小字（浅底用） | `C_HL_INK` | ![](https://placehold.co/14x14/8A6230/8A6230.png) `#8A6230` |
+| 错误 / 排除 | `C_NO` | ![](https://placehold.co/14x14/B03A2E/B03A2E.png) `#B03A2E` |
+| 次要 / 网格 | `C_DIM` | ![](https://placehold.co/14x14/8A8478/8A8478.png) `#8A8478` |
+| logo 松绿（不用于文字） | `C_BRAND_GREEN` | ![](https://placehold.co/14x14/90B898/90B898.png) `#90B898` |
+| logo 赤金（不用于文字） | `C_BRAND_GOLD` | ![](https://placehold.co/14x14/B89058/B89058.png) `#B89058` |
 
 ## 用法（Manim）
 
