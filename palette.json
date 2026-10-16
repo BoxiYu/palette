@@ -77,5 +77,19 @@
     "C_DIM": "#8A8478",
     "C_BRAND_GREEN": "#90B898",
     "C_BRAND_GOLD": "#B89058"
+  },
+  "peiyu_dark": {
+    "BG": "#15241E",
+    "FG": "#EEF0E6",
+    "C_A": "#90B898",
+    "C_A_2": "#5E9C78",
+    "C_B": "#8DB2DC",
+    "C_C": "#E09A70",
+    "C_HL": "#E2B866",
+    "C_HL_INK": "#E2B866",
+    "C_NO": "#F07E6C",
+    "C_DIM": "#6E7F76",
+    "C_BRAND_GREEN": "#90B898",
+    "C_BRAND_GOLD": "#B89058"
   }
 }

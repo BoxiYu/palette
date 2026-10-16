@@ -49,7 +49,8 @@ HL_FILL_OPACITY = {"PAPER": 0.55, "CHALK": 0.80, "JADE": 0.80}
 
 PALETTES = {"paper": PAPER, "chalk": CHALK, "jade": JADE}
 
-# 4. 宣纸朱砂 Xuan & Cinnabar（浅色，水墨+印章）：结论用朱砂印章框，错误用墨灰叉+斜线划掉
+# 4. 宣纸朱砂 Xuan & Cinnabar（浅色，水墨+印章）
+# 已弃用：和培玉同为暖纸+墨色，容易选混，新视频用 PEIYU。保留数据以免旧脚本报错。：结论用朱砂印章框，错误用墨灰叉+斜线划掉
 XUAN = {
     "BG":    "#F3ECDD",  # 背景：暖色宣纸
     "FG":    "#22201C",  # 主文字：松烟墨
@@ -118,4 +119,24 @@ PEIYU = {
 PEIYU_FILL_OPACITY = 0.26     # 区域填充透明度
 PEIYU_HL_FILL_OPACITY = 0.55  # 交集赤金填充。叠在 A/B 上会发浑，先垫一层 BG 实色再盖赤金
 
-PALETTES.update({"peiyu": PEIYU})
+# 8. 培玉·深色 Peiyu Dark：深松墨底，和浅色版角色一一对应，一行切换
+# logo 原色在深底上对比度够（松绿 7.3、赤金 5.5），这里 C_A 直接用 logo 松绿。
+PEIYU_DARK = {
+    "BG":    "#15241E",  # 背景：深松墨
+    "FG":    "#EEF0E6",  # 主文字：米白
+    "C_A":   "#90B898",  # 第一个集合/对象：logo 松绿
+    "C_A_2": "#5E9C78",  # 对象 A 的下一层：深一档的松绿
+    "C_B":   "#8DB2DC",  # 第二个集合：石青（提亮）
+    "C_C":   "#E09A70",  # 第三个集合：赭石（提亮）
+    "C_HL":  "#E2B866",  # 结论/交集/强调：赤金（提亮）
+    "C_HL_INK": "#E2B866",  # 深底上不需要压深，与 C_HL 相同，保证和浅色版的键一致
+    "C_NO":  "#F07E6C",  # 错误/排除：朱红（提亮）
+    "C_DIM": "#6E7F76",  # 次要元素/运算符号/箭头/全集框：松灰
+    "C_BRAND_GREEN": "#90B898",
+    "C_BRAND_GOLD":  "#B89058",
+}
+PEIYU_DARK_FILL_OPACITY = 0.30
+PEIYU_DARK_HL_FILL_OPACITY = 0.80  # 深底上 0.6 左右会发灰
+
+PALETTES.update({"peiyu": PEIYU, "peiyu_dark": PEIYU_DARK})
+DEFAULT = PEIYU  # 对外视频默认用培玉；深色场景用 PEIYU_DARK
