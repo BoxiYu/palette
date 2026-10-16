@@ -109,3 +109,11 @@ C_A, C_B, C_C = P["C_A"], P["C_B"], P["C_C"]
 ```
 
 透明度和描边宽度等参数也在 `palettes.py` 里。其他工具可以读 `palette.json`。
+
+## 作者与许可
+
+作者：Boxi Yu（[@BoxiYu](https://github.com/BoxiYu)）
+
+代码和配色数据以 [MIT 许可](LICENSE)发布。使用、修改、再分发时请保留 `LICENSE` 中的版权声明。用这些配色制作的视频不需要署名，欢迎注明出处。
+
+如何引用见 [CITATION.cff](CITATION.cff)。
