@@ -49,7 +49,8 @@ HL_FILL_OPACITY = {"PAPER": 0.55, "CHALK": 0.80, "JADE": 0.80}
 
 PALETTES = {"paper": PAPER, "chalk": CHALK, "jade": JADE}
 
-# 4. 宣纸朱砂 Xuan & Cinnabar（浅色，水墨+印章）：结论用朱砂印章框，错误用墨灰叉+斜线划掉
+# 4. 宣纸朱砂 Xuan & Cinnabar（浅色，水墨+印章）
+# 已弃用：和培玉同为暖纸+墨色，容易选混，新视频用 PEIYU。保留数据以免旧脚本报错。：结论用朱砂印章框，错误用墨灰叉+斜线划掉
 XUAN = {
     "BG":    "#F3ECDD",  # 背景：暖色宣纸
     "FG":    "#22201C",  # 主文字：松烟墨
@@ -98,3 +99,44 @@ RISO_FILL_OPACITY = 0.55     # 粉/蓝区域填充透明度
 RISO_HL_FILL_OPACITY = 1.0   # 交集叠印紫实色
 
 PALETTES.update({"xuan": XUAN, "blueprint": BLUEPRINT, "riso": RISO})
+
+# 7. 培玉 Peiyu（浅色，品牌色卡）：标色取自 logo，松绿 #90B898、赤金 #B89058
+# 标色原值在米白底上太淡（对比度 2.0 / 2.7），小字一律用压深后的同色相版本。
+PEIYU = {
+    "BG":    "#F7F4EE",  # 背景：米白
+    "FG":    "#1A2822",  # 主文字：墨（带一点松绿）
+    "C_A":   "#1E4A36",  # 第一个集合/对象：深松（也用于标题）
+    "C_A_2": "#2F7A56",  # 对象 A 的下一层：松绿。同色相分层，如原数列→一阶差；也用于「正确」
+    "C_B":   "#2F5D8A",  # 第二个集合：石青（青绿山水的青，与松绿、赤金相配）
+    "C_C":   "#A35A32",  # 第三个集合：赭石
+    "C_HL":  "#B5843A",  # 结论/交集/强调：赤金。描边、大字、填充用
+    "C_HL_INK": "#8A6230",  # 深金：赤金对比度只有 3.0，小字和要停住看的结论改用这个
+    "C_NO":  "#B03A2E",  # 错误/排除：朱红
+    "C_DIM": "#8A8478",  # 次要元素/运算符号/箭头/全集框：暖灰
+    "C_BRAND_GREEN": "#90B898",  # logo 松绿，只用于 logo 和大色块，不用于文字
+    "C_BRAND_GOLD":  "#B89058",  # logo 赤金，同上
+}
+PEIYU_FILL_OPACITY = 0.26     # 区域填充透明度
+PEIYU_HL_FILL_OPACITY = 0.55  # 交集赤金填充。叠在 A/B 上会发浑，先垫一层 BG 实色再盖赤金
+
+# 8. 培玉·深色 Peiyu Dark：深松墨底，和浅色版角色一一对应，一行切换
+# logo 原色在深底上对比度够（松绿 7.3、赤金 5.5），这里 C_A 直接用 logo 松绿。
+PEIYU_DARK = {
+    "BG":    "#15241E",  # 背景：深松墨
+    "FG":    "#EEF0E6",  # 主文字：米白
+    "C_A":   "#90B898",  # 第一个集合/对象：logo 松绿
+    "C_A_2": "#5E9C78",  # 对象 A 的下一层：深一档的松绿
+    "C_B":   "#8DB2DC",  # 第二个集合：石青（提亮）
+    "C_C":   "#E09A70",  # 第三个集合：赭石（提亮）
+    "C_HL":  "#E2B866",  # 结论/交集/强调：赤金（提亮）
+    "C_HL_INK": "#E2B866",  # 深底上不需要压深，与 C_HL 相同，保证和浅色版的键一致
+    "C_NO":  "#F07E6C",  # 错误/排除：朱红（提亮）
+    "C_DIM": "#6E7F76",  # 次要元素/运算符号/箭头/全集框：松灰
+    "C_BRAND_GREEN": "#90B898",
+    "C_BRAND_GOLD":  "#B89058",
+}
+PEIYU_DARK_FILL_OPACITY = 0.30
+PEIYU_DARK_HL_FILL_OPACITY = 0.80  # 深底上 0.6 左右会发灰
+
+PALETTES.update({"peiyu": PEIYU, "peiyu_dark": PEIYU_DARK})
+DEFAULT = PEIYU  # 对外视频默认用培玉；深色场景用 PEIYU_DARK
